@@ -48,7 +48,7 @@ func (e *EventsSender) writeEvents(eventsChan chan entities.Event) {
 	}
 
 	for i := 0; i < len(newEvents); i++ {
-		time.Sleep(time.Duration(rand.Intn(3)) * time.Second)
+		time.Sleep(time.Duration(rand.Intn(10)) * time.Second)
 		eventsChan <- newEvents[i]
 	}
 	close(eventsChan)
